@@ -11,6 +11,6 @@ int main() {
     cin >> width;
     int area = length * width;
     int perim = 2 * length + 2 * width;
-    cout << "The area is: " << length << endl;
+    cout << "The area is: " << area << endl;
     cout << "The perimeter is: " << perim << endl;
 }
