@@ -5,5 +5,5 @@
     $area = $length * $width;
     $perim = 2 * $length + 2 * $width;
     echo "The area is: " . $area;
-    echo "The perimeter is: " . $perim
+    echo "\nThe perimeter is: " . $perim . "\n";
 ?>
