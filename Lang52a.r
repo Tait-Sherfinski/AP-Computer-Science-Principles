@@ -1,3 +1,2 @@
-Lang52a <- function() {
-    
-}
+x <- readline("Enter length")
+print(x)
