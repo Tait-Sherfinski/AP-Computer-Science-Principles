@@ -2,20 +2,20 @@
 #include <math.h>
 
 int main() {
-    float saved;
-    float intrate;
-    float compound;
-    float days;
+    float p;
+    float r;
+    float n;
+    float t;
 
     printf("Amount saved: ");
-    scanf("%f", &saved);
+    scanf("%f", &p);
     printf("Interest saved: ");
-    scanf("%f", &intrate);
+    scanf("%f", &r);
     printf("Number of times compunded per year: ");
-    scanf("%f", &compound);
+    scanf("%f", &n);
     printf("Number of days at interest: ");
-    scanf("%f", &days);
+    scanf("%f", &t);
 
-    float intearned = saved * (1 + ((0.1 * intrate) / compound) ^ ((compound*days) / 365));
-    printf("The interest earned is: %.2f", intearned);
+    float A = p * (1 + (0.01 * r)/(n));
+    printf("%.2f", A);
 }
