@@ -1,2 +1,5 @@
-x <- readline("Enter length")
-print(x)
+{
+    var = readline(prompt = "Enter length: ");
+    var = as.integer(var);
+    print(var);
+}
