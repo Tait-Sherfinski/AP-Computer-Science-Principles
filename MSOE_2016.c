@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     int n;
@@ -8,7 +9,8 @@ int main() {
     scanf("%d", &n);
 
     for (int i = 0; i < n; i++) {
-        if (i % 2 == 1) count++;
+        if (n % i != 0) count++;
     }
-    printf("The number is: %d", count);
+    printf("%d", count);
+    printf("\n");
 }
