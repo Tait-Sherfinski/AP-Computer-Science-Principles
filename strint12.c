@@ -2,10 +2,12 @@
 #include <string.h>
 
 int main() {
-    char sent[100];
+    char str[100];
+    char last_word;
+    int i = 0;
     printf("Enter a sentence: ");
-    gets(sent);
+    gets(str);
     
-    printf("%s", sent);
+    printf("%s", last_word);
     printf("\n");
 }

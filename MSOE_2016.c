@@ -9,8 +9,9 @@ int main() {
     scanf("%d", &n);
 
     for (int i = 0; i < n; i++) {
-        if (n % i != 0) count++;
-    }
+        if (i % 2 != 0) count++;
+    } 
+
     printf("%d", count);
     printf("\n");
 }
