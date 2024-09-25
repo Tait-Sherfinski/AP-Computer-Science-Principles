@@ -3,8 +3,9 @@ def main():
     count = 0
     
     for i in range(1, n):
-        if i % 2 != 0: count+=1
-    print("The number is: " + count)
+        if n % i == 0: count+=1
+    count+=1
+    print(count)
 
 
 
