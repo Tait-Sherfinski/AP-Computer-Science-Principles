@@ -17,6 +17,6 @@ int main() {
     else if (time2 > time1) {
         diff = time2 - time1;
     }
-    printf("%d", diff);
+    printf("%d", hours);
     printf("\n");
 }
