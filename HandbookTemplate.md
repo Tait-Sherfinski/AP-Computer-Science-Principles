@@ -90,10 +90,22 @@ ___
 
 # 2. Data Types
 
-???
 
-```LANGUAGE_HERE
+  * Basic Types:
+    - Basic types are used for arithmetic
+    - There are two basic types:
+        - Integer(int): used to declare whole numbers
+        - Floating Point(float): used to declare numbers with up to 6 decimal places
+  * Enumerated Types:
+    - Placeholder text
+  * Void Type:
+    - Void is used to indicate the absence of a value
+  * Derived Types:
+    - Placeholder text
 
+```
+int x = 0;
+float y = 0.0;
 ```
 
 
@@ -122,7 +134,15 @@ ___
 
 # 4. Arithmetic Operations
 
-???
+* C has 7 basic arithmetic operators:
+  - Addition(+)
+  - Subtraction(-)
+  - Multiplication(*)
+  - Division(/)
+  - Modulus(%)
+  - Increment increase by one(++)
+  - Increment decrease by one(--)
+* Other arithmetic operators such as exponents can only be used with external libraries
 
 
 
@@ -136,7 +156,17 @@ ___
 
 # 5. Assignment Operations
 
-???
+* C has 11 assignment operators
+  - Equal to(=)
+  - Plus equals(+=)
+  - Minus equals(-=)
+  - Times equals(*=)
+  - Divide equals(/=)
+  - Mod equals(%=)
+  - Left shift(<<=)
+  - Right shift(>>=)
+  - And equals(&=)
+  - 
 
 
 
