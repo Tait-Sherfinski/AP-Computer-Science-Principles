@@ -65,7 +65,7 @@ ___
 
 # 1. Compiling and Running
 
-* C is a high-level programming language, meaning it needs to be converted to its equivalent machine code
+C is a high-level programming language, meaning it needs to be converted to its equivalent machine code
 * The compilation process has 4 steps: 
     * Preprocessing
     * Compiling
@@ -91,17 +91,20 @@ ___
 # 2. Data Types
 
 
-  * Basic Types:
-    - Basic types are used for arithmetic
-    - There are two basic types:
-        - Integer(int): used to declare whole numbers
-        - Floating Point(float): used to declare numbers with up to 6 decimal places
-  * Enumerated Types:
-    - Placeholder text
-  * Void Type:
-    - Void is used to indicate the absence of a value
-  * Derived Types:
-    - Placeholder text
+Basic Types:
+  - Basic types are used for arithmetic
+  - There are two basic types:
+      - Integer(int): used to declare whole numbers
+      - Floating Point(float): used to declare numbers with up to 6 decimal places 
+
+Enumerated Types:
+  - Placeholder text
+
+Void Type:
+  - Void is used to indicate the absence of a value
+
+Derived Types:
+  - Placeholder text
 
 ```
 int x = 0;
@@ -134,7 +137,7 @@ ___
 
 # 4. Arithmetic Operations
 
-* C has 7 basic arithmetic operators:
+C has 7 basic arithmetic operators:
   - Addition(+)
   - Subtraction(-)
   - Multiplication(*)
@@ -142,7 +145,8 @@ ___
   - Modulus(%)
   - Increment increase by one(++)
   - Increment decrease by one(--)
-* Other arithmetic operators such as exponents can only be used with external libraries
+
+Other arithmetic operators such as exponents can only be used with external libraries
 
 
 
@@ -156,17 +160,17 @@ ___
 
 # 5. Assignment Operations
 
-* C has 11 assignment operators
-  - Equal to(=)
-  - Plus equals(+=)
-  - Minus equals(-=)
-  - Times equals(*=)
-  - Divide equals(/=)
-  - Mod equals(%=)
-  - Left shift(<<=)
-  - Right shift(>>=)
-  - And equals(&=)
-  - 
+C has 11 assignment operators
+  * Equal to(=)
+  * Plus equals(+=)
+  * Minus equals(-=)
+  * Times equals(*=)
+  * Divide equals(/=)
+  * Mod equals(%=)
+  * Left shift(<<=)
+  * Right shift(>>=)
+  * And equals(&=)
+  * 
 
 
 
@@ -180,7 +184,9 @@ ___
 
 # 6. Comments
 
-???
+When programming, comments are used to make code more readable or to explain what a portion of code does
+
+
 
 
 
