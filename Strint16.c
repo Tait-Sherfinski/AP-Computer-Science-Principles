@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h>
 
 int main() {
-    char s1;
-    char s2;
-    bool result;
+    const char s1[100];
+    const char s2[50];
     printf("Enter a string: ");
-    scanf("%c", &s1);
+    scanf("%s", &s1);
     printf("Enter a string: ");
-    scanf("%c", &s2);
-    for (int i = 0; i < strlen(s1); i++) {
-        if ()
-    }
+    scanf("%s", &s2);
+    char *something = strstr(s1, s2);
+
+    if (something != NULL) printf("The first string contains the second string\n");
+    else printf("The second string does not contain the first string\n");
 }
