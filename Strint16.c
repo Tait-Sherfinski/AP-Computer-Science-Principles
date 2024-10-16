@@ -8,8 +8,8 @@ int main() {
     scanf("%s", &s1);
     printf("Enter a string: ");
     scanf("%s", &s2);
-    char *something = strstr(s1, s2);
+    char *result = strstr(s1, s2);
 
-    if (something != NULL) printf("The first string contains the second string\n");
-    else printf("The second string does not contain the first string\n");
+    if (result != NULL) printf("The first string contains the second string\n");
+    else printf("The first string does not contain the second string\n");
 }
