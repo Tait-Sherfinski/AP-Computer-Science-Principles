@@ -123,7 +123,35 @@ ___
 
 # 3. Console I/O
 
-???
+C has mulitple functions for inputs and outputs. Each function having a specific use case.
+
+To initiate an input, printf() can be used to make a prompt.
+
+```
+printf("Some random prompt: ");
+ ```
+Depending on the data type of the varible, there are a variety of options to grab the input from the prompt
+
+One of the most versatile options is scanf(). Scanf can be used to grab an integer, floating-point number, or a char.
+```
+// integer input
+int x;
+
+printf("Enter a number: ");
+scanf("%d", x);
+
+// floating-point input
+float y;
+
+printf("Enter a number: ");
+scanf("%f", y);
+
+// char input;
+char *z;
+printf("Enter some text: ");
+scanf("%c", z);
+```
+
 
 
 
