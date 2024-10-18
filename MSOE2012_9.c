@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int rVal(char x) {
+int getVal(char x) {
     switch (x){
         case 'I': return 1;
         case 'V': return 5;
@@ -10,17 +10,28 @@ int rVal(char x) {
         case 'C': return 100;
         case 'D': return 500;
         case 'M': return 1000;
-        default case: return 0;
+        default: return 0;
     }
 }
 
-int main() {
-    char rn;
+int convert(char *romanNumeral) {
     int total = 0;
+    int len = strlen(romanNumeral);
+
+    for (int i = 0; i < len; i++) {
+        int currentNum = getVal(romanNumeral[i]);
+        int nextNum = getVal(romanNumeral[i+1]);
+
+        if (currentNum < nextNum) total -= currentNum;
+        else total += currentNum;
+    }
+    return total;
+}
+
+int main() {
+    char *rn;
     printf("Enter a roman numeral: ");
     scanf("%s", rn);
-    for (int i = 0; i < strlen(rn); i++) {
-        
-    }
-    printf("%d", total);
+    int result = convert(rn);
+    printf("%d", result);
 }

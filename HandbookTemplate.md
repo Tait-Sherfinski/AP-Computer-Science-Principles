@@ -1,6 +1,6 @@
 <h1>Handbook on Programming in C</h1>
 
-**AP Computer Science Principles 2023-2024**
+**AP Computer Science Principles 2024-2025**
 
 Tait Sherfinski
 
@@ -106,7 +106,7 @@ Void Type:
 Derived Types:
   - Placeholder text
 
-```
+```C
 int x = 0;
 float y = 0.0;
 ```
@@ -127,13 +127,13 @@ C has mulitple functions for inputs and outputs. Each function having a specific
 
 To initiate an input, printf() can be used to make a prompt.
 
-```
+```C
 printf("Some random prompt: ");
  ```
 Depending on the data type of the varible, there are a variety of options to grab the input from the prompt
 
 One of the most versatile options is scanf(). Scanf can be used to grab an integer, floating-point number, or a char.
-```
+```C
 // integer input
 int x;
 
@@ -212,7 +212,13 @@ ___
 
 # 6. Comments
 
-When programming, comments are used to make code more readable or to explain what a portion of code does
+When programming, comments are used to make code more readable or to explain what a portion of code does.
+
+To write a comment in C, simply put 2 forward slashes before your message:
+
+```C
+// This is what a comment looks like in C
+```
 
 
 
