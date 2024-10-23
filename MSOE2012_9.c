@@ -33,7 +33,7 @@ int main() {
     printf("Enter a roman numeral: ");
     scanf("%s", roman);
     int result = convert(roman);
-    printf("%d", result);
+    printf("%d\n", result);
 
     return 0;
 }

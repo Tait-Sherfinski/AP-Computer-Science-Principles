@@ -17,18 +17,15 @@ int main () {
     char target[1000];
 
     printf("Enter a DNA sequence: ");
-    fgets(sequence, sizeof(sequence), stdin);
-    sequence[strcspn(sequence, "\n")] = '\0';
-
+    scanf("%s", sequence);
     printf("Enter a target sequence: ");
-    fgets(target, sizeof(target), stdin);
-    target[strcspn(target, "\n")] = '\0';
-
+    scanf("%s", target);
+    
     if (strlen(target) == 0) {
         return 1;
     }
 
     int result = counter(sequence, target);
 
-    printf("%d", result);
+    printf("%d\n", result);
 }
