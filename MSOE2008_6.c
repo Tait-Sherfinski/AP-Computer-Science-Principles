@@ -1,17 +1,34 @@
 #include <stdio.h>
 #include <string.h>
 
+int counter(char *seq, char *targetSeq) {
+    int count = 0;
+    char *pos = seq;
+
+    while ((pos = strstr(pos, targetSeq)) != NULL) {
+        count++;
+        pos += strlen(targetSeq);
+    }
+    return count;
+}
+
 int main () {
-    char sequence;
-    char target;
+    char sequence[1000];
+    char target[1000];
 
     printf("Enter a DNA sequence: ");
-    scanf("%s", sequence);
+    fgets(sequence, sizeof(sequence), stdin);
+    sequence[strcspn(sequence, "\n")] = '\0';
+
     printf("Enter a target sequence: ");
-    scanf("%s", target);
+    fgets(target, sizeof(target), stdin);
+    target[strcspn(target, "\n")] = '\0';
 
-    int count = 0;
-    char inSequence = strstr(sequence, target);
+    if (strlen(target) == 0) {
+        return 1;
+    }
 
-    printf("%s", inSequence);
+    int result = counter(sequence, target);
+
+    printf("%d", result);
 }

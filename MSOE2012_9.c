@@ -19,19 +19,21 @@ int convert(char *romanNumeral) {
     int len = strlen(romanNumeral);
 
     for (int i = 0; i < len; i++) {
-        int currentNum = getVal(romanNumeral[i]);
-        int nextNum = getVal(romanNumeral[i+1]);
+        int current = getVal(romanNumeral[i]);
+        int next = (i + 1 < len) ? getVal(romanNumeral[i + 1]) : 0;
 
-        if (currentNum < nextNum) total -= currentNum;
-        else total += currentNum;
+        if (current < next) total -= current;
+        else total += current;
     }
     return total;
 }
 
 int main() {
-    char *rn;
+    char roman[100];
     printf("Enter a roman numeral: ");
-    scanf("%s", rn);
-    int result = convert(rn);
+    scanf("%s", roman);
+    int result = convert(roman);
     printf("%d", result);
+
+    return 0;
 }
