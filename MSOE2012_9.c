@@ -16,11 +16,14 @@ int getVal(char x) {
 
 int convert(char *romanNumeral) {
     int total = 0;
+    int current;
+    int next;
     int len = strlen(romanNumeral);
 
     for (int i = 0; i < len; i++) {
-        int current = getVal(romanNumeral[i]);
-        int next = (i + 1 < len) ? getVal(romanNumeral[i + 1]) : 0;
+        current = getVal(romanNumeral[i]);
+        if (i + 1 < len) next = getVal(romanNumeral[i + 1]);
+        else next = 0;
 
         if (current < next) total -= current;
         else total += current;
