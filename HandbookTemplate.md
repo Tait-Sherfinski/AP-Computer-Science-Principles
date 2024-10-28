@@ -4,17 +4,7 @@
 
 Tait Sherfinski
 
-<!-- This is a comment (which will not be displayed in the live file);
-replace all "???" with your own text. -->
-
-
-
-
 ___
-
-
-
-
 
 <h1>Table of Contents</h1>
 
@@ -37,31 +27,7 @@ ___
   - [15.2 Matrices](#152-matrices)
 - [References](#references)
 
-<!-- 
-- [16. Major Keywords](#16-major-keywords)
-- [17. Error Handling](#17-error-handling)
-- [18. Working with Files](#18-working-with-files)
-- [19. Major Language Features](#19-major-language-features)
-  - [19.1 Classes](#191-classes)
-  - [19.2 Inheritance](#192-inheritance)
-  - [19.3 Generic Typing (Templates)](#193-generic-typing-templates)
-  - [19.4 Pointers](#194-pointers)
-- [20. Importing Local Libraries](#20-importing-local-libraries)
-- [21. Working with Time](#21-working-with-time)
-- [22. Importing Libaries from Package managers](#22-importing-libaries-from-package-managers)
-- [23. Bitwise Operators](#23-bitwise-operators)
-- [24. Common Data Structures](#24-common-data-structures)
-- [25. Advanced Language Features](#25-advanced-language-features)
--->
-
-
-
-
 ___
-
-
-
-
 
 # 1. Compiling and Running
 
@@ -78,15 +44,7 @@ C is a high-level programming language, meaning it needs to be converted to its 
 * Compiling: 
     * placeholder text
 
-
-
-
-
 ___
-
-
-
-
 
 # 2. Data Types
 
@@ -96,30 +54,46 @@ Basic Types:
   - There are two basic types:
       - Integer(int): used to declare whole numbers
       - Floating Point(float): used to declare numbers with up to 6 decimal places 
+    ```C
+    int x = 0;
+    float y = 0.0;
+    ```
 
 Enumerated Types:
-  - Placeholder text
+  - Enumerated types are used give names to constants, making code easier to read
+  - They are only used on values or sets of values that will not change
+  - The keyword enum is used to declare and enumerated type
+  ```C
+  enum week{mon, tue, wed, thu, fri};
+  enum week day;
+  ```
 
 Void Type:
   - Void is used to indicate the absence of a value
 
 Derived Types:
-  - Placeholder text
-
-```C
-int x = 0;
-float y = 0.0;
-```
-
-
-
-
+  - As the name implies, derived types are derived from other data types in C
+  - These types include 
+    - Functions
+    - Arrays
+    - Pointers
+  - Declaration of derived types varies between each type
+    - Function declaration:
+    ```C
+    int function(int num1, int num2) {
+      return num1 * num2;
+    }
+    ```
+    - Array declaration:
+    ```C
+    int arr[] = {1, 2, 3, 4, 5};
+    ```
+    - Pointer declaration:
+    ```C
+    int *pointer;
+    ```
 
 ___
-
-
-
-
 
 # 3. Console I/O
 
@@ -151,17 +125,15 @@ char *z;
 printf("Enter some text: ");
 scanf("%c", z);
 ```
-
-
-
-
-
+Other input and output options are exclusively used for char inputs, these include
+  - getchar
+  - putchar
+  - gets
+  - fgets
+  - puts
+  - fputs
 
 ___
-
-
-
-
 
 # 4. Arithmetic Operations
 
@@ -176,39 +148,19 @@ C has 7 basic arithmetic operators:
 
 Other arithmetic operators such as exponents can only be used with external libraries
 
-
-
-
-
 ___
-
-
-
-
 
 # 5. Assignment Operations
 
 C has 11 assignment operators
-  * Equal to(=)
-  * Plus equals(+=)
-  * Minus equals(-=)
-  * Times equals(*=)
-  * Divide equals(/=)
-  * Mod equals(%=)
-  * Left shift(<<=)
-  * Right shift(>>=)
-  * And equals(&=)
-  * 
-
-
-
-
+  * Equal to(=): assigns a variable to a value
+  * Plus equals(+=): adds a value in addition to an existing value
+  * Minus equals(-=): subtracts a value from an existing value
+  * Times equals(*=): multiplies a value to an existing value
+  * Divide equals(/=): divides a value from an existing value
+  * Mod equals(%=): returns the value of one value from another
 
 ___
-
-
-
-
 
 # 6. Comments
 
@@ -220,49 +172,109 @@ To write a comment in C, simply put 2 forward slashes before your message:
 // This is what a comment looks like in C
 ```
 
-
-
-
-
-
-
 ___
-
-
-
-
 
 # 7. Decision Structures
 
-???
-
-
-
-
+C has 5 different statements that can be used to handle decision making:
+  - If Statement
+  ```C
+  if (boolean expression) {
+    expression;
+  }
+  ```
+  - If-Else Statement
+  ```C
+  if (boolean expression) {
+    expression;
+  }
+  else {
+    expression;
+  }
+  ```
+  - Nested If Statement
+  ```C
+  if (boolean expression) {
+    if (boolean expression2) {
+      expression;
+    }
+    else {
+      expression;
+    }
+  }
+  else {
+    if (boolean expression3) {
+      expression;
+    }
+    else {
+      expression;
+    }
+  }
+  ```
+  - Switch Statement
+  ```C
+  switch(expression) {
+    case expression1 :
+    statement(s);
+    
+    case expression2 :
+    statement(s);
+    
+    default :
+    statement(s)
+  }
+  ```
+  - Nested Switch Statement
+  ```C
+  switch (expression1) {
+   case 1 :
+   switch (expression2){
+      case a :
+         statement;
+      case b :
+         statement;
+   }
+   case 2 :
+   switch (expression2){
+      case c :
+         statement;
+      case d :
+         statement;
+    }  
+  }
+  ```
 
 ___
-
-
-
-
 
 # 8. Conditional Operators
 
-???
+The conditional operator(?) in C is very similar to an if-else statement. The benefit of using the conditional operator in place of an if-else statement is that it takes up less space and is the shortest way to represent a decision structure.<br>
 
-
-
-
+The conditional operator can be used in 3 different syntaxes:<br><br>
+Syntax 1:
+```C
+variable = expression1 ? expression2 : expression3;
+```
+Syntax 2:
+```C
+variable = (condition) ? expression2 : expression3;
+```
+Syntax 3:
+```C
+(condition) ? (variable = expression2) : 
+(variable = expression3);
+```
 
 ___
 
-
-
-
-
 # 9. Logic Operators
 
-???
+Logic operators in C evaluate whether something is true or false. They are often used for statements and loops such as if-statements and while loops.
+
+There are 3 different logic operators in C:
+  - And(&&)
+  - Or(||)
+  - Not(!)
 
 
 
@@ -562,3 +574,4 @@ ___ -->
 * [Markdown Cheatsheet](https://gist.github.com/jonschlinkert/5854601)
 * [description](http://example.com)
 * [C Tutorial](https://www.tutorialspoint.com/cprogramming/index.htm)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/)
