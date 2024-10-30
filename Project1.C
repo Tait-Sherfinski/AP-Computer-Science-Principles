@@ -1,3 +1,5 @@
+// Project Number 12: Grocery Shopping List
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -19,6 +21,7 @@ void addItem(const char *name, float price) {
         groceryList[itemCount].price = price;
         groceryList[itemCount].bought = 0;
         itemCount++;
+        printf("%c has been added", name);
     } else printf("List is full");
 }
 
@@ -29,6 +32,7 @@ void removeItem(const char *name) {
                 groceryList[j] = groceryList[j + 1];
             }
             itemCount--;
+            printf("%c has been removed", name);
             return;
         }
     } printf("Item not found");
@@ -67,41 +71,41 @@ int main() {
 
     do {
         printf("\nGrocery List\n");
-        printf("1. Add Item");
-        printf("2. Remove Item");
-        printf("3. Buy Item");
-        printf("4. Show List");
-        printf("5. Exit");
+        printf("1. Add Item\n");
+        printf("2. Remove Item\n");
+        printf("3. Buy Item\n");
+        printf("4. Show List\n");
+        printf("5. Exit\n");
         printf("Enter your choice: ");
-        scanf("%d", choice);
+        scanf("%d", &choice);
 
         switch (choice) {
             case 1:
                 printf("Enter item name: ");
-                scanf(" %[^\n]", name);
+                scanf("%c", name);
                 printf("Enter item price: ");
                 scanf("%f", price);
                 addItem(name, price);
                 break;
             case 2:
                 printf("Enter item to remove: ");
-                scanf("%[^\n]", name);
+                scanf("%c", name);
                 removeItem(name);
                 break;
             case 3:
                 printf("Enter item to be bought: ");
-                scanf("%[^\n]", name);
+                scanf("%c", name);
                 buyItem(name);
                 break;
             case 4:
                 showList();
                 break;
             case 5:
-                printf("Exiting...");
+                printf("Exiting...\n");
                 break;
             default:
                 printf("Invalid choice");
         }
-    } while (choice != 5);
-    return 0;
+    }
+    while (choice != 5); return 0;
 }
