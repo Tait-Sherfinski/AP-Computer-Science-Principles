@@ -272,9 +272,12 @@ ___
 Logic operators in C evaluate whether something is true or false. They are often used for statements and loops such as if-statements and while loops.
 
 There are 3 different logic operators in C:
-  - And(&&)
-  - Or(||)
-  - Not(!)
+  - And(&&): <br>
+    Used to indicate whether or not <u>two</u> statements are true
+  - Or(||): <br>
+    Indicates if either one of two statements are true
+  - Not(!): <br>
+    Indicates that a statement is not true
 
 
 
