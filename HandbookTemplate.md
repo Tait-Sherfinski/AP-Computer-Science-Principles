@@ -273,11 +273,26 @@ Logic operators in C evaluate whether something is true or false. They are often
 
 There are 3 different logic operators in C:
   - And(&&): <br>
-    Used to indicate whether or not <u>two</u> statements are true
+    Used to indicate whether or not all given statements are true
+    ```C
+    if (statement1 && statement2) {
+      expression;
+    }
+    ```
   - Or(||): <br>
-    Indicates if either one of two statements are true
+    Indicates if at least one given statement is true
+    ```C
+    if (statement1 || statement2) {
+      expression;
+    }
+    ```
   - Not(!): <br>
     Indicates that a statement is not true
+    ```C
+    if (!statement1) {
+      expression;
+    }
+    ```
 
 
 
@@ -305,7 +320,33 @@ ___
 
 # 11. String Methods
 
-???
+The <string.h> library in C contains an assortment of functions regarding the handling of strings.<br>
+
+These functions include:<br>
+
+- strcmp:<br>
+  compares 2 strings and returns 0 if they are equal, returns a value less than 0 if the first string is shorter than the second, or a value greater than 0 if the second string is shorter than the first string
+  ```C
+  char str[] = "Thing";
+  char str2[] = "Thing";
+  return strcmp(str, str2);
+  // returns 0  
+  ```
+- strlen: <br>
+  returns the length of a given string
+  ```C
+  char str[] = "HelloWorld";
+  return strlen(str);
+  // returns 10
+  ```
+- strstr: <br>
+  Searches for the first occurence of a substring within a given string and returns a pointer to that string. If no occurences are found, it return null.
+  ```C
+  char str[] = "HelloWorld";
+  char substr[] = "Wor";
+  return strstr(str, substr);
+  // returns "World"
+  ```
 
 
 
