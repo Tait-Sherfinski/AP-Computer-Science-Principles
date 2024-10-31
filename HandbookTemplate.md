@@ -360,17 +360,17 @@ ___
 
 # 12. Random Generation
 
-???
+To generate a random number or numbers in C, the rand() function in used. The user must give a maximum and minimum range for the random number to be generated in.
 
-
-
-
+```C
+int min = 5;
+int max = 10
+int randomNum = rand() % (max - min + 1) + min;
+return randomNum;
+// returns 6
+```
 
 ___
-
-
-
-
 
 # 13. Looping Structures
 
