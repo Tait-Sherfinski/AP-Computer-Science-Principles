@@ -21,7 +21,7 @@ void addItem(const char *name, float price) {
         groceryList[itemCount].price = price;
         groceryList[itemCount].bought = 0;
         itemCount++;
-        printf("%c has been added", name);
+        printf("%s has been added", name);
     } else printf("List is full");
 }
 
@@ -32,7 +32,7 @@ void removeItem(const char *name) {
                 groceryList[j] = groceryList[j + 1];
             }
             itemCount--;
-            printf("%c has been removed", name);
+            printf("%s has been removed", name);
             return;
         }
     } printf("Item not found");
@@ -42,6 +42,7 @@ void buyItem(const char *name) {
     for (int i = 0; i < itemCount; i++) {
         if (strcmp(groceryList[i].name, name) == 0) {
             groceryList[i].bought = 1;
+            groceryList[i].price = 0;
             printf("%s Bought", name);
             return;
         }
@@ -51,9 +52,7 @@ void buyItem(const char *name) {
 float calculateCost() {
     float total = 0.0;
     for (int i = 0; i < itemCount; i++) {
-        if (!groceryList[i].bought) {
-            total += groceryList[i].price;
-        }
+        total += groceryList[i].price;
     } return total;
 }
 
@@ -82,19 +81,29 @@ int main() {
         switch (choice) {
             case 1:
                 printf("Enter item name: ");
-                scanf("%c", name);
+                getchar();
+                fgets(name, sizeof(name), stdin);
+                name[strcspn(name, "\n")] = 0;
                 printf("Enter item price: ");
-                scanf("%f", price);
+                if (scanf("%f", &price) != 1) {
+                    printf("Invalid price\n");
+                    while (getchar() != '\n');
+                    break;
+                }
                 addItem(name, price);
                 break;
             case 2:
                 printf("Enter item to remove: ");
-                scanf("%c", name);
+                getchar();
+                fgets(name, sizeof(name), stdin);
+                name[strcspn(name, "\n")] = 0;
                 removeItem(name);
                 break;
             case 3:
                 printf("Enter item to be bought: ");
-                scanf("%c", name);
+                getchar();
+                fgets(name, sizeof(name), stdin);
+                name[strcspn(name, "\n")] = 0;
                 buyItem(name);
                 break;
             case 4:
