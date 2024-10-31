@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 int main() {
-    int min = 5;
-    int max = 10;
-
-    int randomNum = rand() % (max - min + 1) + min;
-    printf("%d", randomNum);
+    int x = 0;
+    while (x < 5) {
+        printf("something\t");
+        x++;
+    }
 }

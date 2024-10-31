@@ -374,7 +374,41 @@ ___
 
 # 13. Looping Structures
 
-???
+There are 3 ways to initiate a loop in C:
+
+- For loop: <br>
+Starts at an initial value and increments until a maximum value is reached
+```C
+for (int i = 0; i < 5; i++) {
+  printf("This will print 5 times\n");
+}
+// output:
+// This will print 5 times
+// This will print 5 times
+// This will print 5 times
+// This will print 5 times
+// This will print 5 times
+```
+- While loops: <br>
+Continuously repeats while a certain condition is true. If a condition is always true, it will loop infinitely until terminating the program
+```C
+int x = 0;
+while (x < 5) {
+  printf("This will print 5 times\t");
+  x++;
+}
+// output:
+// This will print 5 times  This will print 5 times This will print 5 times This will print 5 times This will print 5 times
+```
+- Do-while loops: <br>
+A do-while loop is very similar to a regular while loop, however, do-while loops can be used to run multiple things at once. 
+
+```C
+int x = 0;
+do {
+  printf("")
+} while (a < 2);
+```
 
 
 
