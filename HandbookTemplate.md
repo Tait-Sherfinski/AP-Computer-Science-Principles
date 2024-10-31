@@ -146,7 +146,7 @@ C has 7 basic arithmetic operators:
   - Increment increase by one(++)
   - Increment decrease by one(--)
 
-Other arithmetic operators such as exponents can only be used with external libraries
+Other arithmetic operators such as exponents can only be accessed with external libraries
 
 ___
 
@@ -377,7 +377,7 @@ ___
 There are 3 ways to initiate a loop in C:
 
 - For loop: <br>
-Starts at an initial value and increments until a maximum value is reached
+Starts at an initial value and increments until a maximum or minimum value is reached
 ```C
 for (int i = 0; i < 5; i++) {
   printf("This will print 5 times\n");
@@ -401,13 +401,17 @@ while (x < 5) {
 // This will print 5 times  This will print 5 times This will print 5 times This will print 5 times This will print 5 times
 ```
 - Do-while loops: <br>
-A do-while loop is very similar to a regular while loop, however, do-while loops can be used to run multiple things at once. 
+A do-while loop is very similar to a regular while loop, however, do-while loops ensure that, even if the condition is not true, the loop will run at least once.
 
 ```C
 int x = 0;
 do {
-  printf("")
-} while (a < 2);
+  printf("This will print twice\n");
+  x++;
+} while (x < 2);
+// output:
+// This will print twice
+// This will print twice
 ```
 
 
@@ -422,7 +426,37 @@ ___
 
 # 14. Functions/Methods
 
-???
+Functions are blocks of code that are used to complete specific tasks. All C programs have at least one functions, this being the main() function. <br>
+
+The basic syntax for a function in C has the return type of the function, the name of the function, and the parameters taken in, although, parameters are not required.
+```C
+return_type function_name(parameter);
+```
+<br>Additional functions are usually accessed within other functions including main.<br>
+
+C also has built-in functions and libraries which contain functions. Common libraries include stdio.h, string.h, and math.h. <br>
+
+These libraries are used to access very basic functions that most C programs will use, including printf, scanf, common math functions, and string methods.
+
+```C
+#include <stdio.h>
+
+int someFunction(int num) {
+  return num * 5;
+}
+
+int main() {
+  int x;
+
+  printf("Enter a number: ");
+  scanf("%d", &x);
+
+  int y = someFunction(x);
+  printf("%d", y);
+}
+// Enter a number: 4
+// 20
+```
 
 
 
