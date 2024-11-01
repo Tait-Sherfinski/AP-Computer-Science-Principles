@@ -347,6 +347,7 @@ These functions include:<br>
   return strstr(str, substr);
   // returns "World"
   ```
+  - 
 
 
 
@@ -470,7 +471,9 @@ ___
 
 # 15. Elementary Data Structures
 
-???
+Data structures are used to organize, store, and access data.
+
+The 2 most commonly used data structures are arrays, and matrices
 
 
 
@@ -478,7 +481,7 @@ ___
 
 ## 15.1 Arrays/Lists
 
-???
+Arrays in C are used to store variables in one 
 
 
 
