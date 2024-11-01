@@ -206,7 +206,6 @@ C has 5 different statements that can be used to handle decision making:
   }
   ```
 
-
 ___
 
 # 8. Conditional Operators
@@ -257,15 +256,7 @@ There are 3 different logic operators in C:
     }
     ```
 
-
-
-
-
 ___
-
-
-
-
 
 # 10. Advanced Decision Structures
 
@@ -312,15 +303,7 @@ Advanced decision structures include:
   }
   ```
 
-
-
-
-
 ___
-
-
-
-
 
 # 11. String Methods
 
@@ -353,15 +336,7 @@ These functions include:<br>
   ```
   - 
 
-
-
-
-
 ___
-
-
-
-
 
 # 12. Random Generation
 
@@ -419,15 +394,7 @@ do {
 // This will print twice
 ```
 
-
-
-
-
 ___
-
-
-
-
 
 # 14. Functions/Methods
 
@@ -463,25 +430,13 @@ int main() {
 // 20
 ```
 
-
-
-
-
 ___
-
-
-
-
 
 # 15. Elementary Data Structures
 
 Data structures are used to organize, store, and access data.
 
 The 2 most commonly used data structures are arrays, and matrices
-
-
-
-
 
 ## 15.1 Arrays/Lists
 
@@ -515,199 +470,28 @@ return x;
 
 ## 15.2 Matrices
 
-Matrices 
+Matrices are essentially arrays with extra rows(two dimensional arrays). They are used to organize values in a more organized way, similar to a chart.
 
+Initializing a matrix is the same as initializing an array, just with an extra set of brackets:
 
+```C
+int matrix[3][3] = {{1, 3, 5}, {2, 4, 6}};
+```
+To access elements in a matrix, you must use a double for loop to go through both the rows, and the columns.
 
-
+```C
+int x = 0;
+int matrix[3][3] = {{1, 3, 5}, {2, 4, 6}};
+for (int i = 0; i < 3; i++) {
+  for (int j = 0; j < 3; j++) {
+    x += matrix[i][j];
+  }
+}
+return x;
+// returns 21
+```
 
 ___
-
-
-
-
-
-<!-- 
-EVERYTHING BELOW IS OPTIONAL; 
-UNCOMMENT BY REMOVING THE ARROW TAGS SURROUNDING
-(i.e., delete the "< !--" and "-- >" tags)
-
-CHANGE THE SECTION NUMBERS AS DESIRED
--->
-
-<!-- # 16. Major Keywords
-
-???
-
-
-
-
-
-___ -->
-
-
-
-
-
-<!-- # 17. Error Handling
-
-???
-
-
-
-
-
-___ -->
-
-
-
-
-
-<!-- # 18. Working with Files
-
-???
-
-
-
-
-
-___ -->
-
-
-
-
-
-<!-- # 19. Major Language Features
-
-???
-
-
-
-
-
-
-
-## 19.1 Classes
-
-???
-
-
-
-
-
-## 19.2 Inheritance
-
-???
-
-
-
-
-
-## 19.3 Generic Typing (Templates)
-
-???
-
-
-
-
-
-## 19.4 Pointers
-
-???
-
-
-
-
-
-___ -->
-
-
-
-
-
-<!-- # 20. Importing Local Libraries
-
-???
-
-
-
-
-
-___ -->
-
-
-
-
-
-<!-- # 21. Working with Time
-
-???
-
-
-
-
-
-___ -->
-
-
-
-
-
-<!-- # 22. Importing Libaries from Package managers
-
-???
-
-
-
-
-
-___ -->
-
-
-
-
-
-<!-- # 23. Bitwise Operators
-
-???
-
-
-
-
-
-___ -->
-
-
-
-
-
-<!-- # 24. Common Data Structures
-
-???
-
-
-
-
-
-___ -->
-
-
-
-
-
-<!-- # 25. Advanced Language Features
-
-???
-
-
-
-
-
-___ -->
-
-
-
-
 
 # References
 
