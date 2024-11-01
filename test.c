@@ -1,15 +1,9 @@
 #include <stdio.h>
 
-int someFunction(int num) {
-  return num * 5;
-}
-
 int main() {
-  int x;
-
-  printf("Enter a number: ");
-  scanf("%d", &x);
-
-  int y = someFunction(x);
-  printf("%d", y);
+  int x = 0;
+  int arr[5] = {2, 4, 6, 8, 10};
+  for (int i = 0; i < 5; i++) {
+  x += arr[i];
+} return x;
 }

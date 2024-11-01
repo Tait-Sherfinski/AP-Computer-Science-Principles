@@ -192,25 +192,6 @@ C has 5 different statements that can be used to handle decision making:
     expression;
   }
   ```
-  - Nested If Statement
-  ```C
-  if (boolean expression) {
-    if (boolean expression2) {
-      expression;
-    }
-    else {
-      expression;
-    }
-  }
-  else {
-    if (boolean expression3) {
-      expression;
-    }
-    else {
-      expression;
-    }
-  }
-  ```
   - Switch Statement
   ```C
   switch(expression) {
@@ -224,25 +205,7 @@ C has 5 different statements that can be used to handle decision making:
     statement(s)
   }
   ```
-  - Nested Switch Statement
-  ```C
-  switch (expression1) {
-   case 1 :
-   switch (expression2){
-      case a :
-         statement;
-      case b :
-         statement;
-   }
-   case 2 :
-   switch (expression2){
-      case c :
-         statement;
-      case d :
-         statement;
-    }  
-  }
-  ```
+
 
 ___
 
@@ -306,7 +269,48 @@ ___
 
 # 10. Advanced Decision Structures
 
-???
+Advanced decision structures in C are used to make blocks of code that are more intricate. When a loop is embedded within another loop, it becomes a nested loop.
+
+Advanced decision structures include:
+
+  - Nested If Statement
+  ```C
+  if (boolean expression) {
+    if (boolean expression2) {
+      expression;
+    }
+    else {
+      expression;
+    }
+  }
+  else {
+    if (boolean expression3) {
+      expression;
+    }
+    else {
+      expression;
+    }
+  }
+  ```
+  - Nested Switch Statement
+  ```C
+  switch (expression1) {
+   case 1 :
+   switch (expression2){
+      case a :
+         statement;
+      case b :
+         statement;
+   }
+   case 2 :
+   switch (expression2){
+      case c :
+         statement;
+      case d :
+         statement;
+    }  
+  }
+  ```
 
 
 
@@ -481,16 +485,37 @@ The 2 most commonly used data structures are arrays, and matrices
 
 ## 15.1 Arrays/Lists
 
-Arrays in C are used to store variables in one 
+Arrays in C are used to store a set of values in one row. Arrays are very useful for storing large amounts of values rather than creating an excessive amount of stand-alone variables. <br>
 
+Arrays in C are created by initializing the type of variable to be stored, giving the name of the array, and determining the size of the array.
 
+```C
+type arrayName[size];
+```
 
+To access a specific value inside an array, place the index of the element you are looking for in square brackets after the name of the array. Be aware that the index counts up from 0, so the last element in an array with length 5 would be index 4.
 
+```C
+int arr[5] = {2, 4, 6, 8, 10};
+int value = arr[3];
+return value;
+// returns 8
+```
+To access all elements of an array, you must use a loop to go through the array and access every individual value within the array.
 
+```C
+int x = 0;
+int arr[5] = {2, 4, 6, 8, 10};
+for (int i = 0; i < 5; i++) {
+  x += arr[i];
+}
+return x;
+// returns 30
+```
 
 ## 15.2 Matrices
 
-???
+Matrices 
 
 
 
