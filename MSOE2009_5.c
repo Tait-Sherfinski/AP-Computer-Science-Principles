@@ -12,6 +12,6 @@ int main() {
     printf("Enter a non-negative number: ");
     scanf("%d", &num);
     bool result = isPrime(num);
-    if (result == true) printf("The number is prime");
-    else printf("The number is not prime");
+    if (result == true) printf("The number is prime\n");
+    else printf("The number is not prime\n");
 }
