@@ -6,7 +6,6 @@ int main () {
     file = fopen("Prog505a.txt", "r");
     char str[100];
 
-    while (fgets(str, sizeof(str), file)) {
-        printf("%s", str);
-    }
+    fgets(str, sizeof(str), file);
+    printf("%s", str);
 }
