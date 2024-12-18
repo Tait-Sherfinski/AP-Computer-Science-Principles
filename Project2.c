@@ -11,44 +11,44 @@ typedef struct {
     int complete;
 } Task;
 
-Task list[MAX_ITEMS]
+Task list[MAX_ITEMS];
 int taskCount = 0;
 
 void addTask(const char *name) {
-    if (itemCount < MAX_ITEMS) {
-        strcpy(list[itemCount].name, name);
-        list[itemCount].complete = 0;
-        itemCount++;
+    if (taskCount < MAX_ITEMS) {
+        strcpy(list[taskCount].name, name);
+        list[taskCount].complete = 0;
+        taskCount++;
         printf("%s has been added to task list", name);
     } else printf("Task list is full");
 }
 
 void removeTask(const char *name) {
-    for (int i = 0; i < itemCount; i++) {
+    for (int i = 0; i < taskCount; i++) {
         if (strcmp(list[i].name, name) == 0) {
-            for (int j = i; j < itemCount; j++) {
+            for (int j = i; j < taskCount; j++) {
                 list[j] = list[j+1];
-            } itemCount--;
+            } taskCount--;
             printf("%s has been removed from task list", name);
-            return
+            return;
         }
     } printf("Task not found");
 }
 
 void markTaskComplete(const char *name) {
-    for (int i = 0; i < itemCount; i++) {
+    for (int i = 0; i < taskCount; i++) {
         if (strcmp(list[i].name, name) == 0) {
             list[i].complete = 1;
             printf("%s is complete");
-            return
+            return;
         } 
-    } printf("Task not found")
+    } printf("Task not found");
 }
 
 void showList() {
     printf("Task List: ");
-    for (int i = 0; i < itemCount; i++) {
-        printf(list[i].name, list[i].complete ? "(Complete)" : "")
+    for (int i = 0; i < taskCount; i++) {
+        printf("%s\n", list[i].name, list[i].complete ? "(Complete)" : "");
     }
 }
 
@@ -57,18 +57,36 @@ int main() {
     char name[50];
 
     do {
-        printf("\nTask List\n");
-        printf("1. Add Task\n");
-        printf("2. Remove Task\n");
-        printf("3. Mark Task as Complete\n");
-        printf("4. Show Task List\n");
-        printf("5. Exit\n");
-        printf("Enter your choice: ");
+        printf("\nTask List\n1. Add Task\n2. Remove Task\n3. Mark Task as Complete\n4. View Task List\n5. Exit\n");
+        printf("\nEnter your choice: ");
         scanf("%d", &choice);
 
         switch(choice) {
             case 1:
-                
+                printf("Enter name of task: ");
+                scanf("%s", &name);
+                addTask(name);
+                break;
+            case 2:
+                printf("Enter name of task to be remove: ");
+                scanf("%s", &name);
+                removeTask(name);
+                break;
+            case 3:
+                printf("Enter completed task: ");
+                scanf("%s", &name);
+                markTaskComplete(name);
+                break;
+            case 4:
+                showList();
+                break;
+            case 5:
+                printf("Exited\n");
+                break;
+            default:
+                printf("Invalid choice\n");
         }
     }
+    while (choice != 5);
+    return 0;
 }
