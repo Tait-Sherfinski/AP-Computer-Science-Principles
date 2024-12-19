@@ -39,7 +39,7 @@ void markTaskComplete(const char *name) {
     for (int i = 0; i < taskCount; i++) {
         if (strcmp(list[i].name, name) == 0) {
             list[i].complete = 1;
-            printf("%s is complete");
+            printf("%s is complete\n");
             return;
         } 
     } printf("Task not found");
@@ -48,7 +48,7 @@ void markTaskComplete(const char *name) {
 void showList() {
     printf("Task List: ");
     for (int i = 0; i < taskCount; i++) {
-        printf("%s\n", list[i].name, list[i].complete ? "(Complete)" : "");
+        printf("%s\n", list[i].name, list[i].complete = 1 ? "(Completed)" : "");
     }
 }
 
