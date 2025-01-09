@@ -1,5 +1,6 @@
-# Import sorting library, helper class
 Import time
+from Library Import bubbleSort, selectionSort, insertionSort
+Import SortingAlgorithms
 
 def main():
     try:
