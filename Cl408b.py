@@ -1,0 +1,4 @@
+class SortingAlgorithms:
+    
+    def binarySearch():
+        

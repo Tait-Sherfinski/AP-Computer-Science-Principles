@@ -12,7 +12,9 @@ def main():
                 id = int(id)
                 score = int(score)
                 # make helper class objects and add them to data
+                obj = bubbleSort(lines)
         # code here
+        print(obj)
         ...
     except Exception as e:
         print("Error:", e)
