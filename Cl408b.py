@@ -1,4 +1,4 @@
-class SortingAlgorithms:
+class Cl408b:
     
     def linear_search(list, target):
         for index in range(len(list)):
