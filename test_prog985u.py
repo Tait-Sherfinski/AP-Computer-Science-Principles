@@ -16,7 +16,6 @@ class TestQuicksort(unittest.TestCase):
         t = current_time() - self.startTime
         print(f"{self.id()}: {t:6f}")
 
-    # TODO: the rest of the test cases
 
     def test_empty_list(self):
         input_arr = []
