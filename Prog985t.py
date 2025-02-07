@@ -1,27 +1,33 @@
 class Mergesort:
     @staticmethod
-    def sort(arr):
-        mid = len(arr) // 2
-        low = arr[:mid]
-        high = arr[mid:]
-        sortlow = sort(low)
-        sorthigh = sort(high)
-        return merge(sortlow, sorthigh)
+    def mergesort(A):
+        if len(A) > 1:
+            middle = len(A) / 2
+            L = A[0, middle-1]
+            R = A[middle, len(A)]
+            mergesort(L)
+            mergesort(R)
+            merge(A, L, R)
 
     @staticmethod
-    def merge(low, high):
-        arr = []
-        i - j == 0
-
-        while i < len(low) and j < len(high):
-            if low[i] < high[j]:
-                arr.append(low[i])
-                i += 1
+    def merge(A, L, R):
+        i = 0
+        j = 0
+        k = 0
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                A[k] = L[i]
+                i = i +1
             else:
-                arr.append(high[j])
-                j += 1
-            
-        arr.extend(low[i:])
-        arr.extend(high[j:])
+                A[k] = R[j]
+                j = j + 1
+            k = k + 1
+        while i < len(L):
+            A[k] = L[i]
+            i = i + 1
+            k = k + 1
+        while j < len(R):
+            A[k] = R[j]
+            j = j + 1
+            k = k + 1
 
-        return arr
