@@ -1,7 +1,20 @@
 #include <stdio.h>
 
+void opertaions(int a, int b) {
+    printf("a & b = %d\n", a & b);
+    printf("a | b = %d\n", a | b);
+    printf("a ^ b = %d\n", a ^ b);
+    printf("~a = %d\n", ~a);
+    printf("a << 2 = %d\n", a << 2);
+    printf("b >> 2 = %d\n", b >> 2);
+}
+
+void masks(char x) {
+    char cleared_x = x & ~(1 << 3);
+    printf("")
+}
+
 int main() {
-    int i = 29;
-    int j = 15;
-    printf("%d", i | j);
+    int a = 29;
+    int b = 15;
 }
