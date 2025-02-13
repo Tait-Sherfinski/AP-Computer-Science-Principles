@@ -11,10 +11,11 @@ void opertaions(int a, int b) {
 
 void masks(char x) {
     char cleared_x = x & ~(1 << 3);
-    printf("")
+    char set_x = 
 }
 
 int main() {
     int a = 29;
     int b = 15;
+    char x = "0b11001010"
 }
