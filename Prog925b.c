@@ -23,7 +23,7 @@ void bitwise_masks(unsigned char x) {
 void complex_bitwise_operation(int m, int n, int y) {
     int packed = (n << 8) | m;
     printf("%d", packed);
-    int unpacked_m = packed & 0xFF
+    int unpacked_m = packed & 0xFF;
     int unpacked_n = (packed >> 8) & 0xFF;
     printf("%d %d", unpacked_m, unpacked_n);
 
