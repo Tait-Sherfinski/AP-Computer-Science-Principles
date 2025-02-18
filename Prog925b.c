@@ -11,29 +11,29 @@ void bitwise_opertaions(int a, int b) {
 
 void bitwise_masks(unsigned char x) {
     unsigned char cleared_x = x & ~(1 << 3);
-    printf("0b%08b", cleared_x, cleared_x);
+    printf("Clearing the 3rd bit of x: 0b11000010: %d\n", cleared_x);
     unsigned char set_x = x | (1 << 2);
-    printf("0b%08b", set_x, set_x);
+    printf("Setting the 2nd bit of x: 0b11000010: %d\n", set_x);
     unsigned char toggled_x = x ^ (1 << 6);
-    printf("0b%08b (%d)", toggled_x, toggled_x);
+    printf("Toggling the 6th bit of x: 0b11000010: %d\n", toggled_x);
     unsigned char extracted = (x >> 2) & 0b111;
-    printf("0b%03b (%d)", extracted, extracted);
+    printf("Extracting bits 2 to 4 from x: 0b001: %d\n", extracted);
 }
 
 void complex_bitwise_operation(int m, int n, int y) {
     int packed = (n << 8) | m;
-    printf("%d", packed);
+    printf("Packing m and n: %d\n", packed);
     int unpacked_m = packed & 0xFF;
     int unpacked_n = (packed >> 8) & 0xFF;
-    printf("%d %d", unpacked_m, unpacked_n);
+    printf("Unpacking should give back %d and %d\n", unpacked_m, unpacked_n);
 
     int bit1 = (y >> 0) & 1;
     int bit4 = (y >> 3) & 1;
     if (bit1 != bit4) {
         y ^= (1 << 0);
         y ^= (1 << 3);
-    }
-    printf("%d", y);
+    } 
+    printf("Swapping the 1st and 4th bits of y = 75 should result in %d\n", y);
 }
 
 int main() {
