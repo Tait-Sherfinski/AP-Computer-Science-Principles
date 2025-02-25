@@ -8,8 +8,8 @@
 
 typedef struct {
     char name[50];
-    char email[50];
-    char phone_num[50];
+    char *email;
+    char *phone_num;
 } Item;
 
 Item contactList[MAX_ITEMS];
@@ -57,13 +57,11 @@ int main() {
                 getchar();
                 fgets(email, sizeof(email), stdin);
                 name[strcspn(email, "\n")] = 0;
-                printf("Enter Contact Phone Number: ")
+                printf("Enter Contact Phone Number: ");
                 getchar();
-                fgets(name, sizeof(name), stdin);
+                fgets(phone_num, sizeof(phone_num), stdin);
                 name[strcspn(name, "\n")] = 0;
-                    break;
-                
-                addItem(name, price);
+                addContact(name, email, phone_num);
                 break;
             case 2:
                 printf("Enter name of contact: ");
