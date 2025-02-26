@@ -7,7 +7,7 @@
 #define MAX_ITEMS 100
 
 typedef struct {
-    char name[50];
+    char *name;
     char *email;
     char *phone_num;
 } Item;
@@ -15,7 +15,7 @@ typedef struct {
 Item contactList[MAX_ITEMS];
 int itemCount = 0;
 
-void addContact(const char *name, char *email, char *phone_num) {
+void addContact(char *name, char *email, char *phone_num) {
     if (itemCount < MAX_ITEMS) {
         strcpy(contactList[itemCount].name, name);
         contactList[itemCount].email = email;
@@ -35,9 +35,9 @@ void findContact(char *contact_name) {
 
 int main() {
     int choice;
-    char name[50];
-    char email[50];
-    char phone_num[50];
+    char *name;
+    char *email;
+    char *phone_num;
 
     do {
         printf("\nContact List\n");
@@ -50,24 +50,16 @@ int main() {
         switch (choice) {
             case 1:
                 printf("Enter Contact Name: ");
-                getchar();
-                fgets(name, sizeof(name), stdin);
-                name[strcspn(name, "\n")] = 0;
+                scanf("%s", &name);
                 printf("Enter Contact Email: ");
-                getchar();
-                fgets(email, sizeof(email), stdin);
-                name[strcspn(email, "\n")] = 0;
+                scanf("%s", &email);
                 printf("Enter Contact Phone Number: ");
-                getchar();
-                fgets(phone_num, sizeof(phone_num), stdin);
-                name[strcspn(name, "\n")] = 0;
+                scanf("%s", &phone_num);
                 addContact(name, email, phone_num);
                 break;
             case 2:
                 printf("Enter name of contact: ");
-                getchar();
-                fgets(name, sizeof(name), stdin);
-                name[strcspn(name, "\n")] = 0;
+                scanf("%s", &name);
                 findContact(name);
                 break;
             case 3:
