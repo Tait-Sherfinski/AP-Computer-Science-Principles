@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 #define MAX_ITEMS 100
+#define MAX_LENGTH 100
 
 typedef struct {
     char *name;
@@ -17,27 +18,33 @@ int itemCount = 0;
 
 void addContact(char *name, char *email, char *phone_num) {
     if (itemCount < MAX_ITEMS) {
+        contactList[itemCount].name = malloc(strlen(name)+1);
+        contactList[itemCount].email = malloc(strlen(email)+1);
+        contactList[itemCount].phone_num = malloc(strlen(phone_num)+1);
+        if (!contactList[itemCount].name || !contactList[itemCount].email || !contactList[itemCount].phone_num) {
+            return;
+        }
         strcpy(contactList[itemCount].name, name);
-        contactList[itemCount].email = email;
-        contactList[itemCount].phone_num = phone_num;
+        strcpy(contactList[itemCount].email, email);
+        strcpy(contactList[itemCount].phone_num, phone_num);
         itemCount++;
-        printf("%s has been added to contact list", name);
+        printf("%s has been added to contact list.\n");
     } else printf("List is full");
 }
 
 void findContact(char *contact_name) {
     for (int i = 0; i < itemCount; i++) {
-        if (strstr(contact_name, contactList[i].name)) {
+        if (strcmp(contact_name, contactList[i].name) == 0) {
             printf("%s %s %s", contactList[i].name, contactList[i].email, contactList[i].phone_num);
+            return;
         }
     }
+    printf("Contact not found\n");
 }
 
 int main() {
     int choice;
-    char *name;
-    char *email;
-    char *phone_num;
+    char name[MAX_LENGTH], email[MAX_LENGTH], phone_num[MAX_LENGTH];
 
     do {
         printf("\nContact List\n");
@@ -50,24 +57,30 @@ int main() {
         switch (choice) {
             case 1:
                 printf("Enter Contact Name: ");
-                scanf("%s", &name);
+                scanf("%99s", name);
                 printf("Enter Contact Email: ");
-                scanf("%s", &email);
+                scanf("%99s", email);
                 printf("Enter Contact Phone Number: ");
-                scanf("%s", &phone_num);
+                scanf("%99s", phone_num);
                 addContact(name, email, phone_num);
                 break;
             case 2:
                 printf("Enter name of contact: ");
-                scanf("%s", &name);
+                scanf("%99s", &name);
                 findContact(name);
                 break;
             case 3:
                 printf("Exiting...\n");
+                for (int i = 0; i < itemCount; i++) {
+                    free(contactList[i].name);
+                    free(contactList[i].email);
+                    free(contactList[i].phone_num);
+                }
                 break;
             default:
-                printf("Invalid choice");
+                printf("Invalid choice\n");
         }
     }
-    while (choice != 3); return 0;
+    while (choice != 3); 
+    return 0;
 }
