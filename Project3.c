@@ -21,25 +21,28 @@ void addContact(char *name, char *email, char *phone_num) {
         contactList[itemCount].name = malloc(strlen(name)+1);
         contactList[itemCount].email = malloc(strlen(email)+1);
         contactList[itemCount].phone_num = malloc(strlen(phone_num)+1);
-        if (!contactList[itemCount].name || !contactList[itemCount].email || !contactList[itemCount].phone_num) {
+        if (!contactList[itemCount].name) {
+            printf("Memory allocation failed\n");
             return;
         }
         strcpy(contactList[itemCount].name, name);
         strcpy(contactList[itemCount].email, email);
         strcpy(contactList[itemCount].phone_num, phone_num);
         itemCount++;
-        printf("%s has been added to contact list.\n");
+        printf("Contact has been added\n");
     } else printf("List is full");
 }
 
 void findContact(char *contact_name) {
+    int found = 0;
     for (int i = 0; i < itemCount; i++) {
         if (strcmp(contact_name, contactList[i].name) == 0) {
             printf("%s %s %s", contactList[i].name, contactList[i].email, contactList[i].phone_num);
-            return;
+            found = 1;
+            break;
         }
     }
-    printf("Contact not found\n");
+    if (!found) printf("Contact not found\n");
 }
 
 int main() {
@@ -53,20 +56,24 @@ int main() {
         printf("3. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
+        while (getchar() != '\n');
 
         switch (choice) {
             case 1:
                 printf("Enter Contact Name: ");
-                scanf("%99s", name);
+                fgets(name, sizeof(name), stdin);
+                name[strcspn(name, "\n")] = '\0';
                 printf("Enter Contact Email: ");
-                scanf("%99s", email);
+                fgets(email, sizeof(email), stdin);
+                name[strcspn(email, "\n")] = '\0';
                 printf("Enter Contact Phone Number: ");
-                scanf("%99s", phone_num);
+                fgets(phone_num, sizeof(phone_num), stdin);
                 addContact(name, email, phone_num);
                 break;
             case 2:
                 printf("Enter name of contact: ");
-                scanf("%99s", &name);
+                fgets(name, sizeof(name), stdin);
+                name[strcspn(name, "\n")] = '\0';
                 findContact(name);
                 break;
             case 3:
@@ -82,5 +89,5 @@ int main() {
         }
     }
     while (choice != 3); 
-    return 0;
+return 0;
 }
