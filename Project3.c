@@ -87,7 +87,6 @@ int main() {
             default:
                 printf("Invalid choice\n");
         }
-    }
-    while (choice != 3); 
-return 0;
+    } while (choice != 3); 
+    return 0;
 }
