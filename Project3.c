@@ -45,6 +45,13 @@ void findContact(char *contact_name) {
     if (!found) printf("Contact not found\n");
 }
 
+void showList() {
+    printf("Contacts\n");
+    for (int i = 0; i < itemCount; i++) {
+        printf("%s %s %s\n", contactList[i].name, contactList[i].email, contactList[i].phone_num);
+    }
+}
+
 int main() {
     int choice;
     char name[MAX_LENGTH], email[MAX_LENGTH], phone_num[MAX_LENGTH];
@@ -53,7 +60,8 @@ int main() {
         printf("\nContact List\n");
         printf("1. Add Contact\n");
         printf("2. Search for Contact\n");
-        printf("3. Exit\n");
+        printf("3. Show Contact List\n");
+        printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
         while (getchar() != '\n');
@@ -77,6 +85,9 @@ int main() {
                 findContact(name);
                 break;
             case 3:
+                showList();
+                break;
+            case 4:
                 printf("Exiting...\n");
                 for (int i = 0; i < itemCount; i++) {
                     free(contactList[i].name);
@@ -87,6 +98,6 @@ int main() {
             default:
                 printf("Invalid choice\n");
         }
-    } while (choice != 3); 
+    } while (choice != 4); 
     return 0;
 }
