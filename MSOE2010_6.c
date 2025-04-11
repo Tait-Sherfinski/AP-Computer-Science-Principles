@@ -3,7 +3,7 @@
 float func(int n, float x[], float y[]) {
     float A = 0.0;
     for (int i = 0; i < n-1; i++) {
-        A += x[i]*y[i+1] - y[i]*x[i+1];
+        A = 1/2 * (x[i] * y[i+1]) - (x[i+1] * y[i]);
     } printf("%f", A);
 }
 
