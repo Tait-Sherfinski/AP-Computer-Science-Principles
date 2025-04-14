@@ -21,7 +21,7 @@ int main() {
     int arr[100];
     int tri_num = makeTriangular(num, arr);
     for (int i = 0; i < tri_num; i++) {
-        for (int j = 0 j < tri_num; j++) {
+        for (int j = 0; j < tri_num; j++) {
             for (int k = 0; k < tri_num; k++) {
                 if (arr[i] + arr[j] + arr[k] == num) {
                     printf("Partitioned: %d, %d, %d\n", arr[i], arr[j], arr[k]);
